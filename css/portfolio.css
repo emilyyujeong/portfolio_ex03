@@ -8,22 +8,87 @@
 
 .inner>* {
     flex: 1;
-
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 
 }
 
+.main_section {
+    position: relative;
+    text-align: center;
+}
+
+.m_inner {
+    width: 1500px;
+    margin: 0 auto;
+}
 
 .slogan {
-    font-family: 'Gamja Flower';
-    font-size: 100px;
+    position: relative;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 50px;
 }
+
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(335deg);
+    width: 720px;
+    height: 300px;
+    background: url(../images/round.png) no-repeat;
+    opacity: 0;
+}
+
+.section.on .circle {
+    opacity: 1;
+}
+
+.star {
+    position: absolute;
+    font-size: 30px;
+    top: 35%;
+    left: 40%;
+    transform: translate(0, -50%);
+    animation: turn 5s linear infinite;
+}
+
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.star2 {
+    position: absolute;
+    font-size: 40px;
+    top: 60%;
+    left: 60%;
+    transform: translate(0, -50%);
+    animation: turn 5s linear infinite;
+}
+
+
+
+
+/* Section Content */
+
 
 
 .section .content {
-    background: tomato;
+
     opacity: 0;
     transform: translate(-300px, 0);
     height: 400px;
@@ -41,12 +106,6 @@
 }
 
 
-.section .description {
-    background: tan;
-    opacity: 0;
-    transform: translate(300px, 0);
-
-}
 
 .section.on .content {
     transform: translate(0, 0);
@@ -54,11 +113,121 @@
     transition: 1s 1s;
 }
 
+
+/* Section Description */
+
+
+.section .description {
+    padding: 20px 0;
+    opacity: 0;
+    transform: translate(300px, 0);
+    align-items: start;
+    line-height: 30px;
+
+
+}
+
+.section .description .desc_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+
+}
+
 .section.on .description {
     transform: translate(0, 0);
     opacity: 1;
     transition: 1s 2s;
 }
+
+.section .description .tit {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.section .description ul>li {
+    font-size: 18px;
+}
+
+.section .description .desc_txt .btn {}
+
+.section .description .desc_txt .btn a {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    margin-right: 100px;
+    border: 1px solid #000;
+
+}
+
+
+
+
+/* SECTION PROFILE  */
+
+.profile {}
+
+
+.profile h2 {
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.profile>div {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 180px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.profile .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    transform: rotate(15deg);
+}
+
+
+
+.profile .career,
+.profile .contact {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 50px;
+    border-radius: 50px;
+}
+
+.profile .category {
+    flex: 3;
+}
+
+.profile .elements {
+    flex: 7;
+    line-height: 20px;
+}
+
+.profile .career {
+    margin-bottom: 30px;
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
 
 .header {
     position: fixed;
@@ -70,6 +239,15 @@
 .header.on {
     color: #fff;
 }
+
+
+
+.header a {
+    border: 1px solid #000;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+
 
 .gnb {
     position: fixed;
@@ -205,4 +383,15 @@
 
 .mopen.on button::after {
     transform: translate(0, -50%) rotate(-45deg);
+}
+
+
+
+aside {
+    position: fixed;
+    inset: 50px auto auto 50px;
+    transform: translate(0, calc(-100% + 500px));
+    z-index: 999;
+
+    writing-mode: vertical-lr;
 }
