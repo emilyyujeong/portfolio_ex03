@@ -14,70 +14,242 @@
 
 }
 
-.main_section {
-    position: relative;
-    text-align: center;
+/* MainVisual Main Section */
+
+
+
+#cosmo {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    right: 80px;
+    bottom: 80px;
 }
 
-.m_inner {
-    width: 1500px;
-    margin: 0 auto;
+#cosmo>div {
+    position: absolute;
 }
+
 
 .slogan {
-    position: relative;
-    font-family: 'Montserrat';
-    font-weight: 800;
+    top: 50%;
+    margin-left: 50px;
+    transform: translateY(-50%);
+    animation: left 1.2s ease forwards;
+
+    line-height: 100px;
+}
+
+.slogan h2 {
+    font-size: 70px;
+    font-weight: 700;
+
+}
+
+.slogan h3 {
     font-size: 50px;
+    font-weight: 300;
+
 }
 
 
-.circle {
-    position: absolute;
+
+.circle_bg {
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(335deg);
-    width: 720px;
-    height: 300px;
-    background: url(../images/round.png) no-repeat;
-    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: -99;
+    animation: cosmo 1.2s ease forwards;
 }
 
-.section.on .circle {
-    opacity: 1;
-}
-
-.star {
+.circle {
+    width: 668px;
+    height: 668px;
+    border-radius: 50%;
     position: absolute;
-    font-size: 30px;
-    top: 35%;
-    left: 40%;
-    transform: translate(0, -50%);
-    animation: turn 5s linear infinite;
+    background-size: 100% auto !important;
+    display: block;
+    top: 206px;
+    filter: grayscale(90%);
 }
 
+.circle.c1 {
+    background: url(/images/circle2.png) no-repeat;
+    opacity: 0.6;
+    left: -2.2%;
+    animation: turn 20s linear infinite;
 
-@keyframes turn {
+}
+
+.circle.c2 {
+    background: url(/images/circle2.png) no-repeat;
+    left: 15.25%;
+    animation: turn 20s linear infinite;
+}
+
+.circle.c3 {
+    background: url(/images/circle.png) no-repeat;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle.c4 {
+    background: url(/images/circle2.png) no-repeat;
+    right: 15.25%;
+    animation: turn2 20s linear infinite;
+}
+
+.circle.c5 {
+    background: url(/images/circle2.png) no-repeat;
+    opacity: 0.6;
+    right: -2.2%;
+    animation: turn 20s linear infinite;
+}
+
+@keyframes cosmo {
     0% {
-        transform: rotate(0deg)
-    }
-
-    50% {
-        transform: rotate(180deg)
+        opacity: 0;
     }
 
     100% {
-        transform: rotate(360deg)
+        opacity: 1;
     }
 }
 
-.star2 {
-    position: absolute;
-    font-size: 40px;
-    top: 60%;
-    left: 60%;
-    transform: translate(0, -50%);
-    animation: turn 5s linear infinite;
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes turn2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes top {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes top2 {
+    0% {
+        top: 40px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes left {
+    0% {
+        left: -300px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes right {
+    0% {
+        right: -300px;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes bottom {
+    0% {
+        bottom: -300px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width:1280px) {
+    #cosmo {
+        top: 70px;
+        left: 70px;
+        right: 70px;
+        bottom: 70px;
+    }
+
+    .slogan img {
+        width: 500px;
+    }
+
+    .num img {
+        width: 262px;
+    }
+
+    .text .big img {
+        width: 440px;
+    }
+
+    .text .small img {
+        width: 270px;
+    }
+
+    .circle_bg {
+        width: 1600px;
+        height: 1080px;
+    }
+
+    .circle {
+        width: 600px;
+        height: 600px;
+        top: 240px;
+    }
+
+    .circle .c1 {
+        left: -6.3%;
+    }
+
+    .circle .c2 {
+        left: 12.6%;
+    }
+
+    .circle .c4 {
+        right: 12.6%;
+    }
+
+    .circle .c5 {
+        right: -6.3%;
+    }
 }
 
 
